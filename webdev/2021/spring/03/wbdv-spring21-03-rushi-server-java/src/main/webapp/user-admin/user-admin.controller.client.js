@@ -46,9 +46,6 @@ function clearInputFields() {
     $pwdFld.val("");
     $firstNameFld.val("");
     $lastNameFld.val("");
-//   $roleSelect.find('option[value="STUDENT"]').attr("selected", true);
-//   $roleSelect.find('option[value="FACULTY"]').removeAttr("selected");
-//   $roleSelect.find('option[value="STAFF"]').removeAttr("selected");
     $roleSelect.prop('selectedIndex', 2);
 }
 
@@ -162,10 +159,6 @@ function main() {
         users = fetchedUsers;
         renderUsers(users)
     });
-
-    // findAllUsers(function (fetchedUsers) {
-    //   renderUsers(fetchedUsers);
-    // });
 
     $updateBtn.click(updateUser);
     $searchBtn.click(findUserById);
