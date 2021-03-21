@@ -1,0 +1,112 @@
+
+
+.wbdv-content-row{
+    height: 100%;
+}
+
+.wbdv-editor-left-pane {
+    height: 100%;
+    background-color: #161718;
+}
+
+.wbdv-editor-content {
+    /*#height: 100%;*/
+    background-color: #161718;
+    width: 80%;
+    padding-top: 5px;
+}
+
+.wbdv-editor-head-title {
+    padding-top: 5px;
+}
+
+.wbdv-editor-head-title-text {
+    display: inline;
+    font-weight: lighter;
+}
+
+.wbdv-editor-nav-pills .nav-item{
+    border: 3px !important;
+    border-radius: 0.25rem;
+    color: white !important;
+    font-weight: lighter;
+}
+
+.wbdv-editor-nav-pills .nav-link .disabled{
+    color: #434343;
+}
+.wbdv-editor-nav-pills > .nav-link > .disabled:hover{
+    color: #434343;
+}
+
+.wbdv-editor-nav-pills .nav-link{
+    color: white !important;
+    font-weight: lighter;
+}
+
+.wbdv-editor-nav-pills .nav-item:hover {
+    background-color: #18191A;
+}
+
+.disabled {
+    background: #18191A;
+    color: #515050 ;
+}
+
+.list-group-item {
+    background-color: #1f2122 !important;
+    color: white;
+    font-weight: lighter;
+    margin-top: 5%;
+}
+
+.navbar-custom {
+    background-color: #18191A;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link{
+    color: #ffffff;
+}
+
+.navbar-custom .nav-item:hover .nav-link{
+    color: rgba(255,255,255,.5);
+}
+
+.navbar-custom .nav-link.active {
+    background-color: #0077ff;
+    color: white;
+}
+
+.navbar .navbar-custom {
+    padding: 0px;
+}
+
+.navbar-custom .nav-item:hover {
+    background-color: #1f2122;
+}
+
+a .wbdv-editor-nav-pills{
+    color: white;
+}
+
+.wbdv-editor-nav-pills {
+    margin-top: 1.0rem;
+    background-color: #1f2122;
+}
+
+.list-group-item {
+    margin: 5px;
+}
+
+.wbdv-editor-nav-pills.lesson-tabs-editable-item{
+    align-items: center;
+}

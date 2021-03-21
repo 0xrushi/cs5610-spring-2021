@@ -1,0 +1,19 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.bg-dark {
+    background-color: #242526 !important;
+}
+.btn-primary{
+    background: #0077ff;
+}
+.btn-red{
+    background: #C64C43;
+}
+body{
+    background-color: #161718;
+}
+.container{
+    color: white;
+    background-color: #242526 ;
+}
