@@ -7,28 +7,29 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * {
- *     "id": 1616286780181,
- *     "topicId": "1",
- *     "name": "name",
- *     "type": null,
- *     "widgetOrder": null,
- *     "text": null,
- *     "src": null,
- *     "size": null,
- *     "width": null,
- *     "height": null,
- *     "cssClass": null,
- *     "style": null,
- *     "value": null
- * }
- * **/
+
+// {
+//     "id": 1616286780181,
+//     "topicId": "1",
+//     "name": "name",
+//     "type": null,
+//     "widgetOrder": null,
+//     "text": null,
+//     "src": null,
+//     "size": null,
+//     "width": null,
+//     "height": null,
+//     "cssClass": null,
+//     "style": null,
+//     "value": null
+// }
+
 
 @RestController
+@CrossOrigin(origins = "*")
 public class WidgetController {
      @Autowired
-     WidgetService service;//= new WidgetService();
+     WidgetService service;//= new WidgetService();22
 
      @PostMapping("/api/topics/{tid}/widgets")
      public Widget createWidget(

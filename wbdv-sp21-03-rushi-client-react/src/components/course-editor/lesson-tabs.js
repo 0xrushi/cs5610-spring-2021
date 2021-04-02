@@ -12,7 +12,7 @@ const LessonTabs = (
         updateLesson,
         deleteLesson
     }) => {
-    const {layout, courseId, moduleId, lessonId} = useParams();
+    const {layout, courseId, moduleId, lessonId, topicId} = useParams();
 
     useEffect(() => {
         if(moduleId !== "undefined" && typeof moduleId  !== "undefined"){

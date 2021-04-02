@@ -1,6 +1,15 @@
 package com.example.wbdvspring2103rushiserverjava.models;
 
+//import javax.persistence.*;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="widgets")
 public class Widget {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String topicId;
     private String name;
@@ -14,6 +23,8 @@ public class Widget {
     private String cssClass;
     private String style;
     private String value;
+    private Boolean ordered;
+
 
     public Widget(Long id, String topicId, String name, String type, Integer widgetOrder, String text, String src, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
         this.id = id;
@@ -137,4 +148,43 @@ public class Widget {
     public void setValue(String value) {
         this.value = value;
     }
+    public Boolean getOrdered() {
+        return ordered;
+    }
+
+    public void setOrdered(Boolean ordered) {
+        this.ordered = ordered;
+    }
 }
+
+
+/*
+    create table widget (
+       id bigint not null,
+        height integer,
+        size integer,
+        text varchar(255),
+        topic_id varchar(255),
+        type varchar(255),
+        width integer,
+        primary key (id)
+    ) engine=InnoDB
+ */
+
+/*
+create table widgets (
+       id bigint not null auto_increment,
+        height integer,
+        size integer,
+        text varchar(255),
+        topic_id varchar(255),
+        type varchar(255),
+        width integer,
+        primary key (id)
+    ) engine=InnoDB
+ */
+
+/*1
+    alter table widgets
+       add column name varchar(255)
+ */

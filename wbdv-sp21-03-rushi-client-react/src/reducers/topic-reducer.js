@@ -35,15 +35,21 @@ const topicReducer = (state = initialState, action) => {
                 })
             }
         case "DELETE_TOPIC":
-            return {
-                ...state,
+            var newstate= {
                 topics: state.topics.filter(topic => {
-                    if (topic._id !== action.deleteItem._id) {
-                        return true
-                    } else {
+                    if (topic._id === action.deleteItem._id) {
                         return false
+                    } else {
+                        return true
                     }
                 })
+            }
+            console.log(newstate);
+            return newstate
+        case "CLEAN_TOPIC":
+            return {
+                ...state,
+                topics: []
             }
 
         default:

@@ -8,6 +8,8 @@ import {connect, Provider} from "react-redux";
 import ModuleList from "./module-list";
 import LessonTabs from "./lesson-tabs";
 import TopicPills from "./topic-pills";
+import WidgetList from "../widgets/widget-list";
+import widgetReducer from "../../reducers/widget-reducer";
 import topicReducer from "../../reducers/topic-reducer";
 import courseReducer from "../../reducers/course-reducer";
 import CourseEditorNavbar from "./course-editor-navbar";
@@ -32,7 +34,8 @@ const reducer = combineReducers({
     moduleReducer,
     lessonReducer,
     topicReducer,
-    courseReducer
+    courseReducer,
+    widgetReducer
 })
 const store = createStore(reducer)
 
@@ -161,12 +164,13 @@ const store = createStore(reducer)
 
 
 const CourseEditor = ({history, course, findCourseById}) => {
-    const {layout, courseId, moduleId} = useParams();
+    const {layout, courseId, moduleId, topicId} = useParams();
     let mdiv;
     if(moduleId !== "undefined" && typeof moduleId  !== "undefined")
         mdiv=<div>
             <LessonTabs/>
             <TopicPills/>
+            <WidgetList/>
         </div>
     return(
         <Provider store={store}>

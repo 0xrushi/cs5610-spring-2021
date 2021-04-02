@@ -17,7 +17,9 @@ const TopicPills = (
     const {layout, courseId, moduleId, lessonId, topicId} = useParams()
 
     useEffect(() => {
-        findTopicsForLesson(lessonId)
+        if (typeof lessonId !== "undefined") {
+            findTopicsForLesson(lessonId)
+        }
     }, [lessonId])
 
     return (
@@ -35,7 +37,7 @@ const TopicPills = (
                                 deleteItem={deleteTopic}
                                 selectItem={selectTopic}
                                 selected={selected}
-                                isActive={topic._id === topicId ? "active" : ""}
+                                active={topic._id === topicId}
                             />
                         </li>
                     )
@@ -60,11 +62,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
     createTopic: (lessonId) => {
-        TopicService.createTopic(lessonId, {title: "New Topic"})
-            .then(theActualTopic => dispatch({
-                type: "CREATE_TOPIC",
-                topic: theActualTopic
-            }))
+        if(lessonId !== undefined) {
+            TopicService.createTopic(lessonId, {title: "New Topic"})
+                .then(theActualTopic => dispatch({
+                    type: "CREATE_TOPIC",
+                    topic: theActualTopic
+                }))
+        }
     },
     updateTopic: (topic) =>
         TopicService.updateTopic(topic._id, topic)
@@ -73,8 +77,13 @@ const mapDispatchToProps = (dispatch) => ({
                 updatedTopic: topic
             })),
     deleteTopic: (topicToDelete) => {
+        console.log("calling topic service")
+        console.log(topicToDelete._id)
         TopicService.deleteTopic(topicToDelete._id).then(
-            (status) => dispatch({ type: 'DELETE_TOPIC', deleteItem: topicToDelete })
+            (status) => {
+                console.log(status);
+                dispatch({type: 'DELETE_TOPIC', deleteItem: topicToDelete})
+            }
         )
 
     },
@@ -89,7 +98,7 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch({
             type: "SELECT_TOPIC",
             updatedTopic: topic
-        })
+        }),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)
