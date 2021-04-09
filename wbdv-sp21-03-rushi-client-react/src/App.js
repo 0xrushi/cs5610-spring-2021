@@ -6,6 +6,8 @@ import Home from "./components/home";
 import { BrowserRouter, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainNavbar from './components/main-navbar';
+import QuizzesList from "./components/quizzes/quizzes-list";
+import Quiz from "./components/quizzes/quiz";
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
                 <Route path="/" exact={true}  component={Home}/>
                 <Route path="/courses" component={CourseManager}/>
                 {/*<Route path="/courses/editor" component={CourseEditor}/>*/}
-
+                <Route path="/courses/:courseId/quizzes" exact={true}><QuizzesList/></Route>
+                <Route path="/courses/:courseId/quizzes/:quizId" exact={true}><Quiz/></Route>
                 <Route path={[
                     "/courses/:layout/edit/:courseId",
                     "/courses/:layout/edit/:courseId/modules/:moduleId",

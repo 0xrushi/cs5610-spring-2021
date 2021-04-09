@@ -25,6 +25,7 @@ export default class CourseTable
                                 <th scope="col" className="fa-2x">Title</th>
                                 <th scope="col" className="fa-2x d-none d-sm-table-cell">Owned by</th>
                                 <th scope="col" className="fa-2x d-none d-lg-table-cell">Last modified</th>
+                                <th scope="col" className="fa-2x d-none d-lg-table-cell">Quiz</th>
                                 <th scope="col">
                                     <i className=" mx-2 fa fa-2x fa-folder"></i>
                                     <i className="mx-2 fas fa-2x fa-sort-amount-up"></i>
