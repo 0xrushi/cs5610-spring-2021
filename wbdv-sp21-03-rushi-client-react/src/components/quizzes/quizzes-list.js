@@ -13,21 +13,28 @@ const QuizzesList = () => {
             })
     }, [])
     return(
-        <div>
+        <div className="container">2
             <h2>Quizzes</h2>
-            <div className="list-group">
+            <ul className="list-group">
                 {
                     quizzes.map((quiz) => {
                         return(
-                            <Link
-                                to={`/courses/${courseId}/quizzes/${quiz._id}`}
-                                className="list-group-item">
-                                {quiz.title}
-                            </Link>
+                            <li key={quiz._id}
+                                className={"list-group-item"}>
+                                <Link
+                                    to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                    {quiz.title}
+                                </Link>
+                                <Link
+                                    className={"btn btn-primary float-right"}
+                                    to={`/courses/${courseId}/quizzes/${quiz._id}`}>
+                                    Start
+                                </Link>
+                            </li>
                         )
                     })
                 }
-            </div>
+            </ul>
         </div>
     )
 }

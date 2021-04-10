@@ -13,13 +13,15 @@ const Quiz = () => {
     },[])
 
     return(
-        <div>
+        <div className="container">
             <h2>Quiz {quizId}</h2>
-            <ul>
+            <ul className="list-group">
                 {
                     questions.map(question =>
-                        <li>
-                            <Question question={question}/>
+                        <li
+                            key={question._id}
+                            className="list-group-item">
+                                <Question question={question}/>
                         </li>
                     )
                 }

@@ -28,8 +28,7 @@ const TopicPills = (
             <ul className="nav nav-pills">
                 {
                     topics.map(topic =>
-                        <li key={topic._id}
-                            className="nav-link">
+                        <li key={topic._id}>
                             <EditableItem
                                 to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
                                 updateItem={updateTopic}

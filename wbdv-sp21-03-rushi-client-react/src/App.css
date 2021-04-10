@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -41,10 +41,11 @@
     font-family: 'Poppins', sans-serif;
 }
 .bg-dark {
-    background-color: #242526 !important;
+    /*background-color: #242526 !important;*/
 }
 .btn-primary{
     background: #0077ff;
+  /*color: white;*/
 }
 
 html,body {
@@ -58,15 +59,18 @@ height:100%;
 width:100%;
 }
 
+i {
+  color: white;
+}
 
 div.container-fluid {
   color: white;
-  background-color: #161718 ;
+  /*background-color: #161718 ;*/
 }
 
 div.container-fluid2 {
   color: white;
-  background-color: #161718 ;
+  /*background-color: #161718 ;*/
   height: inherit;
   float: left;
 }
@@ -77,11 +81,11 @@ div.container-fluid2 {
 
 .container td{
   color: white;
-  background-color: #242526 ;
+  /*background-color: #242526 ;*/
 }
 
 .card-body {
-  background-color: #242526 ;
+  /*background-color: #242526 ;*/
 }
 
  div > div.card-footer   {
@@ -93,5 +97,5 @@ div.container-fluid2 {
 }
 
 #root{
-background-color: #161718;
+/*background-color: #161718;*/
 }

@@ -1,33 +1,91 @@
 import React, {useState} from "react";
-
+import './questions.css'
 const TrueFalseQuestion = ({question}) => {
     const [answer, setAnswer] = useState(null)
+    const [graded, setGraded] = useState(false)
+
     return (
-        <div>
-            <h4>
-                {question.question}
-                {
-                    answer == question.correct &&
-                    <i className="fas fa-check"></i>
-                }
-                {
-                    answer != question.correct &&
-                    <i className="fas fa-times"></i>
-                }
-            </h4>
-            {question.correct}
-            <br/>
-            {JSON.stringify(answer)}
-            <br/>
-            <label><input
-                type="radio"
-                onClick={() => setAnswer(true)}
-                name={question._id}/>True</label>
-            <br/>
-            <label><input
-                type="radio"
-                onClick={() => setAnswer(false)}
-                name={question._id}/>False</label>
+        <div className={"container"}>
+            <div className={"row"}>
+                <span className={"float-left col-md-11"} >
+                    <h4>
+                    {question.question}
+                    </h4>
+                </span>
+                <span className="float-right col-md-1" style={{textAlign:"center"}}>
+                    {
+                        graded &&
+                        answer == question.correct &&
+                        <i className="fas fa-check"></i>
+                    }
+                    {
+                        graded &&
+                        answer != question.correct &&
+                        <i className="fas fa-times"></i>
+                    }
+                </span>
+            </div >
+            <div >
+            <ul className="list-group pt-2">
+                <li className={
+                    `list-group-item
+                                ${graded && question.correct === "true" ? "list-group-item-success" : ""}
+                                ${graded && question.correct !== "true" && answer === "true" ? "list-group-item-danger" : ""}
+                            `}
+                >
+                    <input
+                        type="radio"
+                        name={question._id}
+                        onClick={() => setAnswer("true")}/>
+                    <label className="form-check-label ml-2">
+                        True
+                    </label>
+                    {
+                        graded && question.correct === "true" &&
+                        <i className={"fas fa-check float-right m-0"}></i>
+                    }
+                    {
+                        graded && question.correct !== "true" && answer === "true" &&
+                        <i className={"fas fa-times float-right"}></i>
+                    }
+                </li>
+                <li className={
+                    `list-group-item
+                                ${graded && question.correct === "false" ? "list-group-item-success" : ""}
+                                ${graded && question.correct !== "false" && answer === "true" ? "list-group-item-danger" : ""}
+                            `}
+                >
+                    <input
+                        type="radio"
+                        name={question._id}
+                        onClick={() => setAnswer("false")}/>
+                    <label className="form-check-label ml-2">
+                        True
+                    </label>
+                    {
+                        graded && question.correct === "false" &&
+                        <i className={"fas fa-check float-right m-0"}></i>
+                    }
+                    {
+                        graded && question.correct !== "false" && answer === "true" &&
+                        <i className={"fas fa-times float-right"}></i>
+                    }
+                </li>
+
+
+            </ul>
+            </div>
+
+            <p className={"mt-3"}>
+                Your answer: {answer}
+            </p>
+
+            <button
+                onClick={() => setGraded(true)}
+                type="button"
+                className="btn btn-success mb-4">
+                Grade
+            </button>
         </div>
     )
 }
