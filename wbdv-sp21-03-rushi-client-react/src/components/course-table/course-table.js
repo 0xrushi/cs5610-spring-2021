@@ -20,7 +20,7 @@ export default class CourseTable
                 </Link> */}
                 <div className="container round-corners">
                     <table className="table table-hover table-borderless responsive">
-                        <thead className="thead-dark">
+                        <thead className="thead table-primary">
                             <tr>
                                 <th scope="col" className="fa-2x">Title</th>
                                 <th scope="col" className="fa-2x d-none d-sm-table-cell">Owned by</th>

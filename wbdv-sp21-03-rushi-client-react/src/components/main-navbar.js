@@ -17,13 +17,12 @@ class MainNavbar extends React.Component {
                   <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                       <li className="nav-item active">
                           <a className="nav-link" href="#"><i className="fa fa-home" /> Home <span className="sr-only">(current)</span> </a>
-                          {/*                <i class="fas fa-home"></i>*/}
                       </li>
                       <li className="nav-item">
-                          <form className="form-inline my-2 my-lg-0">
+                          <div className="form-inline my-2 my-lg-0">
                               <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                               <button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-                          </form>
+                          </div>
                       </li>
                   </ul>
                   <button type="button" className="btn btn-primary mr-2" >Login</button>

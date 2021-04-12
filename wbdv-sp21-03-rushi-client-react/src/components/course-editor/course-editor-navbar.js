@@ -35,13 +35,13 @@ const CourseEditorNavbar = ({course, findCourseById}) => {
                     {/*        <i className="fas fa-bars"/>*/}
                     {/*    </span>*/}
                     {/*</button>*/}
-                    <div className="collapse navbar-collapse wbdv-nav-items"
+                    <div className="collapse navbar-collapse"
                          id="navbarSupportedContent">
-                        <ul className="navbar-nav mb-2 mb-lg-0 flex-row wbdv-nav-group">
+                        <ul className="navbar-nav ml-auto mb-2 mb-lg-0 flex-row">
                             <li className="nav-item wbdv-nav-item">
-                                <a className="btn btn-primary nav-link"
+                                <Link className="btn btn-primary nav-link"
                                    aria-current="page"
-                                   href="/">Home</a>
+                                   to="/">Home</Link>
                             </li>
                         </ul>
                     </div>

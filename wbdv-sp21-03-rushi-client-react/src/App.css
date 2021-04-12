@@ -51,7 +51,7 @@
 html,body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #root{
@@ -99,3 +99,7 @@ div.container-fluid2 {
 #root{
 /*background-color: #161718;*/
 }
+
+/*tbody{*/
+/*  background-color: #242526;*/
+/*}*/
