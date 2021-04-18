@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import './questions.css'
-const TrueFalseQuestion = ({question}) => {
+const TrueFalseQuestion = ({question, graded, setQuestionsWithAns}) => {
     const [answer, setAnswer] = useState(null)
-    const [graded, setGraded] = useState(false)
 
     return (
         <div className={"container"}>
@@ -30,13 +29,27 @@ const TrueFalseQuestion = ({question}) => {
                 <li className={
                     `list-group-item
                                 ${graded && question.correct === "true" ? "list-group-item-success" : ""}
-                                ${graded && question.correct !== "true" && answer === "true" ? "list-group-item-danger" : ""}
+                                ${graded && question.correct !== "true" && answer === "false" ? "list-group-item-danger" : ""}
                             `}
                 >
                     <input
                         type="radio"
                         name={question._id}
-                        onClick={() => setAnswer("true")}/>
+                        onClick={() => {
+                            setAnswer("true")
+                            setQuestionsWithAns((prev) =>
+                            prev.map((q) =>  {
+                                if(q._id === question._id){
+                                    return {
+                                        ...q,
+                                        answer:"true"
+                                    }
+                                }
+                                else{
+                                    return q
+                                }
+                            }))
+                        }}/>
                     <label className="form-check-label ml-2">
                         True
                     </label>
@@ -51,16 +64,29 @@ const TrueFalseQuestion = ({question}) => {
                 </li>
                 <li className={
                     `list-group-item
-                                ${graded && question.correct === "false" ? "list-group-item-success" : ""}
+                                ${graded && question.correct === "false"  ? "list-group-item-success" : ""}
                                 ${graded && question.correct !== "false" && answer === "true" ? "list-group-item-danger" : ""}
                             `}
                 >
                     <input
                         type="radio"
                         name={question._id}
-                        onClick={() => setAnswer("false")}/>
+                        onClick={() => {
+                            setAnswer("false" )
+                            setQuestionsWithAns((prev) =>
+                                prev.map((q) => {
+                                        if (q._id === question._id) {
+                                            return {...q, answer: "false"}
+                                        } else {
+                                            return q
+                                        }
+                                    }
+
+                                )
+                            )
+                        }}/>
                     <label className="form-check-label ml-2">
-                        True
+                        False
                     </label>
                     {
                         graded && question.correct === "false" &&
@@ -80,12 +106,12 @@ const TrueFalseQuestion = ({question}) => {
                 Your answer: {answer}
             </p>
 
-            <button
-                onClick={() => setGraded(true)}
-                type="button"
-                className="btn btn-success mb-4">
-                Grade
-            </button>
+            {/*<button*/}
+            {/*    onClick={() => setGraded(true)}*/}
+            {/*    type="button"*/}
+            {/*    className="btn btn-success mb-4">*/}
+            {/*    Grade*/}
+            {/*</button>*/}
         </div>
     )
 }

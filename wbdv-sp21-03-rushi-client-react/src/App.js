@@ -8,6 +8,7 @@ import './App.css';
 import MainNavbar from './components/main-navbar';
 import QuizzesList from "./components/quizzes/quizzes-list";
 import Quiz from "./components/quizzes/quiz";
+import AttemptList from "./components/quizzes/attempts-list";
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
                 {/*<Route path="/courses/editor" component={CourseEditor}/>*/}
                 <Route path="/courses/:courseId/quizzes" exact={true}><QuizzesList/></Route>
                 <Route path="/courses/:courseId/quizzes/:quizId" exact={true}><Quiz/></Route>
+                <Route path={"/courses/:courseId/quizzes/:quizId/attempts"} exact={true}>
+                    <AttemptList/>
+                </Route>
                 <Route path={[
                     "/courses/:layout/edit/:courseId",
                     "/courses/:layout/edit/:courseId/modules/:moduleId",
